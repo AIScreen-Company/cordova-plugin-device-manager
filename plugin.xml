@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-device-manager" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Deviceadmin</name>
+    <js-module name="deviceManager" src="www/DeviceManager.js">
+        <clobbers target="deviceManager"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="DeviceManager">
+                <param name="android-package" value="com.symfast.devicemanager.DeviceManagerPlugin"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:exported="true" android:label="@string/app_name" android:description="@string/app_name" 
+            android:name="com.symfast.devicemanager.DeviceManagerReceiver" android:permission="android.permission.BIND_DEVICE_ADMIN">
+                <meta-data android:name="android.app.device_admin" android:resource="@xml/policies" />
+                <intent-filter>
+                    <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                </intent-filter>
+            </receiver>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.VIBRATE"/>
+        </config-file>
+        <resource-file src="src/android/policies.xml" target="res/xml/policies.xml" />
+        <source-file src="src/android/DeviceManagerReceiver.java" target-dir="src/com/symfast/devicemanager"/>
+        <source-file src="src/android/DeviceManagerPlugin.java" target-dir="src/com/symfast/devicemanager"/>
+    </platform>
+</plugin>
