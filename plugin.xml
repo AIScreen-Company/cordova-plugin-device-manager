@@ -27,8 +27,7 @@
             <uses-permission android:name="android.permission.WAKE_LOCK" />
             <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
             <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-            <uses-permission android:name="android.permission.VIBRATE"/>
-        </config-file>
+         </config-file>
         <resource-file src="src/android/policies.xml" target="res/xml/policies.xml" />
         <source-file src="src/android/DeviceManagerReceiver.java" target-dir="src/com/symfast/devicemanager"/>
         <source-file src="src/android/DeviceManagerPlugin.java" target-dir="src/com/symfast/devicemanager"/>

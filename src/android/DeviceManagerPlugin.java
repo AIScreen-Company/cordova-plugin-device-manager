@@ -70,8 +70,7 @@ public class DeviceManagerPlugin extends CordovaPlugin {
             this.offScreen(callbackContext);
             return true;
         } else if (action.equals("onScreen")) {
-            Boolean keepOn = args.getBoolean(0);
-            this.onScreen(keepOn, callbackContext);
+            this.onScreen(callbackContext);
             return true;
         } else if (action.equals("rootReboot")) {
             this.rootReboot(callbackContext);
@@ -93,12 +92,12 @@ public class DeviceManagerPlugin extends CordovaPlugin {
     }
 
     // Turn on the screen and keep it on if specified
-    private void onScreen(final boolean keepOn, final CallbackContext callbackContext) {
+    private void onScreen(final CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Window window = cordova.getActivity().getWindow();
-                if (keepOn) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                 window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
                 window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
                 window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
