@@ -8,7 +8,7 @@ $ cordova plugin add https://github.com/AIScreen-Company/cordova-plugin-device-m
 ```
 ###  Usage
 
-### 1. `addAdmin(successCallback, errorCallback)`
+### 1. addAdmin(successCallback, errorCallback)
 
 Добавляет администратора на устройство.
 
@@ -24,7 +24,7 @@ deviceManager.addAdmin(
     }
 ); 
 ```
-### 2. `lockScreen(successCallback, errorCallback)`
+### 2. lockScreen(successCallback, errorCallback)
 
 Блокирует экран устройства.
 
@@ -39,7 +39,7 @@ deviceManager.lockScreen(
 );
 ```
 
-### 3. `removeAdmin(successCallback, errorCallback)`
+### 3. removeAdmin(successCallback, errorCallback)
 
 Удаляет администратора с устройства.
 
@@ -54,7 +54,7 @@ deviceManager.removeAdmin(
 );
 ``` 
 
-### 4. `isAdmin(successCallback, errorCallback)`
+### 4. isAdmin(successCallback, errorCallback)
 
 Проверяет, является ли текущий пользователь администратором.
 
@@ -66,9 +66,10 @@ deviceManager.isAdmin(
     function(error) {
         console.error('Ошибка при проверке статуса администратора: ' + error);
     }
-);``` 
+);
+``` 
 
-### 5. `onScreen(successCallback, errorCallback)`
+### 5. onScreen(successCallback, errorCallback)
 
 Включает экран устройства.
 
@@ -80,9 +81,10 @@ deviceManager.onScreen(
     function(error) {
         console.error('Ошибка при включении экрана: ' + error);
     }
-);``` 
+);
+``` 
 
-### 6. `offScreen(successCallback, errorCallback)`
+### 6. offScreen(successCallback, errorCallback)
 
 Выключает экран устройства.
 
@@ -94,9 +96,10 @@ deviceManager.offScreen(
     function(error) {
         console.error('Ошибка при выключении экрана: ' + error);
     }
-);``` 
+);
+``` 
 
-### 7. `rootReboot(successCallback, errorCallback)`
+### 7. rootReboot(successCallback, errorCallback)
 
 Перезагружает устройство с доступом root.
 
@@ -111,7 +114,7 @@ deviceManager.rootReboot(
 );
 ``` 
 
-### 8. `rootPowerOn(successCallback, errorCallback)`
+### 8. rootPowerOn(successCallback, errorCallback)
 
 Включает/выключает устройство с доступом root.
 
@@ -123,9 +126,10 @@ deviceManager.rootPowerOn(
     function(error) {
         console.error('Ошибка при включении/выключении устройства с доступом root: ' + error);
     }
-);``` 
+);
+``` 
 
-### 9. `rootShutdown(successCallback, errorCallback)`
+### 9. rootShutdown(successCallback, errorCallback)
 
 Выключает устройство с доступом root.
 ```
